@@ -1,0 +1,37 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+@await Component.InvokeAsync("_HeadPartial")
+
+<body>
+    <div class="container-fluid  p-0">
+        <!-- Spinner Start -->
+        @await Component.InvokeAsync("_SpinnerPartial")
+        <!-- Spinner End -->
+        <!-- Header Start -->
+        @await Component.InvokeAsync("_NavbarPartial")
+        <!-- Header End -->
+        <!-- Carousel Start -->
+        @await Component.InvokeAsync("_BookingCoverPartial")
+        <!-- Carousel End -->
+        <!-- Booking Start -->
+      
+       
+        @await  Html.PartialAsync("AddBooking.cshtml")
+        @await  Html.PartialAsync("/Views/DefaultController1/NewsLatterResult.cshtml")
+        <!-- Newsletter Start -->
+        <!-- Footer Start -->
+        @await Component.InvokeAsync("_FooterPartial")
+        <!-- Footer End -->
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+    </div>
+
+    @await Component.InvokeAsync("_JavaScriptPartial")
+</body>
+
+</html>

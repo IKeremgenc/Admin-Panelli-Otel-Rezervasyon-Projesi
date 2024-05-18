@@ -1,0 +1,17 @@
+﻿@model UpdateAboutDto
+@{
+    ViewData["Title"] = "UpdateAbout";
+    Layout = "~/Views/AdminLayoutController1/_AdmniLayout.cshtml";
+}
+
+
+<form method="post">
+    <input type="hidden" asp-for="Aboutid" />
+    <label> açıklama</label>
+    <input type="text" asp-for="Description" class="form-control" />
+    <br />
+ 
+    <button class=" btn btn-outline-success">Personel Güncelle</button>
+</form>
+
+

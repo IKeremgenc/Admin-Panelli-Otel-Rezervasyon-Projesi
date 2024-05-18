@@ -1,0 +1,42 @@
+﻿@model List<ResulcWorkLocationDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayoutController1/_AdmniLayout.cshtml";
+    int sayi = 0;
+}
+
+<table class="table table-xs mb-0">
+    <thead>
+        <tr>
+
+            <th>#</th>
+            <th>Lokasyon Adı</th>
+            <th>Şehir</th>
+            <th>Güncelle</th>
+            <th>Sil</th>
+         
+
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+            sayi++;
+            <tr>
+
+                <th>@sayi</th>
+                <td>@item.WorkLocationName</td>
+                <td>@item.WorkLocationCity</td>
+                <td> <a href="WorkLocationController1/UpdateWorkLocation/@item.WorkLocationid" class="btn btn-success">Güncelle</a> </td>
+                <td> <a href="WorkLocationController1/DeleteStaff/@item.WorkLocationid" class="btn btn-danger">Sil</a> </td>
+         
+
+
+            </tr>
+
+        }
+    </tbody>
+</table>
+<a href="" class=" btn btn-outline-info">Yeni Lokasyon</a>
+

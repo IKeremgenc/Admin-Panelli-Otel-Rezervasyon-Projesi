@@ -1,0 +1,38 @@
+﻿using HotelProject.EntityLayer.Concrete;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace HotelProject.DataAccsesLayer.Concrete
+{
+    public class Context : IdentityDbContext<AppUser,AppRole,int>
+    {
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseSqlServer("server=KEREMGENCPC\\SQLEXPRESS; initial catalog = ApiDb2; integrated security = true");
+
+
+
+        }
+        public DbSet<Room> Rooms { get; set; }
+        public DbSet<Services> Servicese { get; set; }
+        public DbSet<Staff> Staff { get; set; }
+        public DbSet<Subscribe> Subscribes { get; set; }
+        public DbSet<Testimonial> Testimonials { get; set; }
+        public DbSet<About> Abouts { get; set; }
+        public DbSet<Booking> Bookings { get; set; }
+        public DbSet<Guest> Guests  { get; set; }
+        public DbSet<Contect>Contects  { get; set; }
+        public DbSet<SendMessage> sendMessages{ get; set; }
+        public DbSet<CategoreMessage> CategoreMessages{ get; set; }
+        public DbSet<WorkLocation> WorkLocations{ get; set; }
+      
+     
+   
+    }
+}

@@ -1,0 +1,60 @@
+﻿@model List<HotelProject.WebUI.Dtos.AppUserDto.ResultAppUserWokrLocationDto>
+@{
+    ViewData["Title"] = "UserList";
+    Layout = "~/Views/AdminLayoutController1/_AdmniLayout.cshtml";
+}
+
+
+<table class="table table-xs mb-0">
+    <thead>
+        <tr>
+
+            <th>Ad</th>
+            <th>Soyad</th>
+            <th>Şehir</th>
+            <th>Ülke</th>
+            <th>Çalıştığı Yer</th>
+            <th>Cinsiyet</th>
+    
+
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+
+                <td>@item.Name </td>
+                <td>@item.Surname</td>
+                <td>@item.Sehir</td>
+             
+                <td>
+                    <span>@item.Countrey</span>
+
+                </td>
+                <td>@item.WorkLocationName</td>
+                @if (item.Cinsiyet=="Erkek")
+                {
+                    <td><i class="fa fa-circle-o text-success mr-2"></i> Erkek</td>
+                }
+                @if(item.Cinsiyet=="Kadın")
+                {
+                    <td><i class="fa fa-circle-o text-warning mr-2"></i> Kadın</td>
+
+                }
+              
+              
+              
+              
+
+
+            </tr>
+
+        }
+    </tbody>
+</table>
+<a href="" class=" btn btn-outline-info">Yeni Personel</a>
+
+
+
